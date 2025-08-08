@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "runtime-dimension-manager",
+	"version": "${version}",
+	"name": "Runtime Dimension Manager",
+	"description": "Manage dimensions at runtime!",
+	"authors": [
+		"Serafim Dietrich"
+	],
+	"contact": {
+		"homepage": "https://github.com/SerafimDietrich",
+		"sources": "https://github.com/SerafimDietrich/runtime-dimension-manager",
+        "issues": "https://github.com/SerafimDietrich/runtime-dimension-manager/issues"
+    },
+	"license": "MIT",
+	"icon": "assets/runtime-dimension-manager/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.serafimdietrich.runtimedimensionmanager.RuntimeDimensionManager"
+		],
+		"client": [
+			"io.github.serafimdietrich.runtimedimensionmanager.RuntimeDimensionManagerClient"
+		]
+	},
+	"mixins": [
+		"runtime-dimension-manager.mixins.json",
+		{
+			"config": "runtime-dimension-manager.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
